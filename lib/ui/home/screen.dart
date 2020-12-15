@@ -14,8 +14,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
-    song = _addAudio("nyanlooped.ogg", true);
-    song2 = _addAudio("nyanslow.ogg", false);
+    // song = _addAudio("nyanlooped.ogg", true);
+    // song2 = _addAudio("nyanslow.ogg", false);
     document.onMouseMove.listen(onDocumentMouseMove);
     document.onMouseDown.listen(onDocumentMouseDown);
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -26,24 +26,24 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
   }
 
-  AudioElement _addAudio(String src, [bool play = false]) {
-    final _element = AudioElement();
-    // ignore: undefined_prefixed_name
-    ui.platformViewRegistry.registerViewFactory('audio-$src', (int viewId) {
-      _element
-        ..style.border = '0'
-        ..src = src
-        ..loop = true;
-      if (src != null) {
-        _element..src = src;
-      }
-      return _element;
-    });
-    if (play) {
-      return _element;
-    }
-    return _element;
-  }
+  // AudioElement _addAudio(String src, [bool play = false]) {
+  //   final _element = AudioElement();
+  //   // ignore: undefined_prefixed_name
+  //   ui.platformViewRegistry.registerViewFactory('audio-$src', (int viewId) {
+  //     _element
+  //       ..style.border = '0'
+  //       ..src = src
+  //       ..loop = true;
+  //     if (src != null) {
+  //       _element..src = src;
+  //     }
+  //     return _element;
+  //   });
+  //   if (play) {
+  //     return _element;
+  //   }
+  //   return _element;
+  // }
 
   @override
   Widget build(BuildContext context) {
