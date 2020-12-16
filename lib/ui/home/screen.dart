@@ -95,6 +95,7 @@ bool running = true;
 
 AudioElement song;
 AudioElement song2;
+ColladaModel model;
 
 void init(Size windowSize) {
   container = new DivElement();
@@ -109,7 +110,14 @@ void init(Size windowSize) {
   scene = new Scene();
   // TODO: FogExp2 does not inherit correctly.
   scene.fog = new FogExp2(0x003366, 0.0095);
-
+  final loader = ColladaLoader();
+  loader.load("OrpheFT_3D_rev9.dae", js.allowInterop((m) {
+    print(m);
+    model = m;
+    scene.add(model.scene.children[0]);
+  }), js.allowInterop((progress) {
+    print("${progress.loaded} / ${progress.total} ");
+  }));
   //POPTART
   poptart = new Object3D();
   //    object     x    y    z    w    h    d   color
@@ -278,95 +286,95 @@ void animate(num t) {
 }
 
 void render(num t) {
-  var delta = t; //clock.getDelta();
-  if (running) deltaSum += delta;
-  if (deltaSum > .07) {
-    deltaSum = deltaSum % .07;
-    frame = (frame + 1) % 12;
-    for (var c = 0; c < numStars; c++) {
-      var tempX = stars[5][c].position.x,
-          tempY = stars[5][c].position.y,
-          tempZ = stars[5][c].position.z;
-      for (var state = 5; state > 0; state--) {
-        var star = stars[state][c];
-        var star2 = stars[state - 1][c];
-        star.position.x = star2.position.x - 8;
-        star.position.y = star2.position.y;
-        star.position.z = star2.position.z;
+  // var delta = t; //clock.getDelta();
+  // if (running) deltaSum += delta;
+  // if (deltaSum > .07) {
+  //   deltaSum = deltaSum % .07;
+  //   frame = (frame + 1) % 12;
+  //   for (var c = 0; c < numStars; c++) {
+  //     var tempX = stars[5][c].position.x,
+  //         tempY = stars[5][c].position.y,
+  //         tempZ = stars[5][c].position.z;
+  //     for (var state = 5; state > 0; state--) {
+  //       var star = stars[state][c];
+  //       var star2 = stars[state - 1][c];
+  //       star.position.x = star2.position.x - 8;
+  //       star.position.y = star2.position.y;
+  //       star.position.z = star2.position.z;
 
-        if (star.position.x < -100) {
-          star.position.x += 200;
-          star.position.y = rand.nextDouble() * 200 - 100;
-          star.position.z = rand.nextDouble() * 200 - 100;
-        }
-      }
-      stars[0][c].position.x = tempX;
-      stars[0][c].position.y = tempY;
-      stars[0][c].position.z = tempZ;
-    }
-    switch (frame) {
-      case 0: //2nd frame
-        face.position.x++;
-        feet.position.x++;
-        break;
-      case 1:
-        face.position.y--;
-        feet.position.x++;
-        feet.position.y--;
-        poptart.position.y--;
-        rainbow.position.x -= 9.0;
-        rainChunk.position.x += (8.0 * (numRainChunks - 1)) - 1;
-        break;
-      case 2:
-        feet.position.x--;
-        break;
-      case 3:
-        face.position.x--;
-        feet.position.x--;
-        rainbow.position.x += 9.0;
-        rainChunk.position.x -= (8.0 * (numRainChunks - 1)) - 1;
-        break;
-      case 4:
-        face.position.y++;
-        break;
-      case 5:
-        poptart.position.y++;
-        feet.position.y++;
-        rainbow.position.x -= 9.0;
-        rainChunk.position.x += (8.0 * (numRainChunks - 1)) - 1;
-        break;
-      case 6: //8th frame
-        face.position.x++;
-        feet.position.x++;
-        break;
-      case 7:
-        poptart.position.y--;
-        face.position.y--;
-        feet.position.x++;
-        feet.position.y--;
-        rainbow.position.x += 9.0;
-        rainChunk.position.x -= (8.0 * (numRainChunks - 1)) - 1;
-        break;
-      case 8:
-        feet.position.x--;
-        break;
-      case 9:
-        face.position.x--;
-        feet.position.x--;
-        rainbow.position.x -= 9.0;
-        rainChunk.position.x += (8.0 * (numRainChunks - 1)) - 1;
-        break;
-      case 10:
-        face.position.y++;
-        break;
-      case 11: //1st frame
-        poptart.position.y++;
-        feet.position.y++;
-        rainbow.position.x += 9.0;
-        rainChunk.position.x -= (8.0 * (numRainChunks - 1)) - 1;
-        break;
-    }
-  }
+  //       if (star.position.x < -100) {
+  //         star.position.x += 200;
+  //         star.position.y = rand.nextDouble() * 200 - 100;
+  //         star.position.z = rand.nextDouble() * 200 - 100;
+  //       }
+  //     }
+  //     stars[0][c].position.x = tempX;
+  //     stars[0][c].position.y = tempY;
+  //     stars[0][c].position.z = tempZ;
+  //   }
+  //   switch (frame) {
+  //     case 0: //2nd frame
+  //       face.position.x++;
+  //       feet.position.x++;
+  //       break;
+  //     case 1:
+  //       face.position.y--;
+  //       feet.position.x++;
+  //       feet.position.y--;
+  //       poptart.position.y--;
+  //       rainbow.position.x -= 9.0;
+  //       rainChunk.position.x += (8.0 * (numRainChunks - 1)) - 1;
+  //       break;
+  //     case 2:
+  //       feet.position.x--;
+  //       break;
+  //     case 3:
+  //       face.position.x--;
+  //       feet.position.x--;
+  //       rainbow.position.x += 9.0;
+  //       rainChunk.position.x -= (8.0 * (numRainChunks - 1)) - 1;
+  //       break;
+  //     case 4:
+  //       face.position.y++;
+  //       break;
+  //     case 5:
+  //       poptart.position.y++;
+  //       feet.position.y++;
+  //       rainbow.position.x -= 9.0;
+  //       rainChunk.position.x += (8.0 * (numRainChunks - 1)) - 1;
+  //       break;
+  //     case 6: //8th frame
+  //       face.position.x++;
+  //       feet.position.x++;
+  //       break;
+  //     case 7:
+  //       poptart.position.y--;
+  //       face.position.y--;
+  //       feet.position.x++;
+  //       feet.position.y--;
+  //       rainbow.position.x += 9.0;
+  //       rainChunk.position.x -= (8.0 * (numRainChunks - 1)) - 1;
+  //       break;
+  //     case 8:
+  //       feet.position.x--;
+  //       break;
+  //     case 9:
+  //       face.position.x--;
+  //       feet.position.x--;
+  //       rainbow.position.x -= 9.0;
+  //       rainChunk.position.x += (8.0 * (numRainChunks - 1)) - 1;
+  //       break;
+  //     case 10:
+  //       face.position.y++;
+  //       break;
+  //     case 11: //1st frame
+  //       poptart.position.y++;
+  //       feet.position.y++;
+  //       rainbow.position.x += 9.0;
+  //       rainChunk.position.x -= (8.0 * (numRainChunks - 1)) - 1;
+  //       break;
+  //   }
+  // }
   camera.position.x += (mouseX - camera.position.x) * .005;
   camera.position.y += (-mouseY - camera.position.y) * .005;
   camera.lookAt(scene.position);
