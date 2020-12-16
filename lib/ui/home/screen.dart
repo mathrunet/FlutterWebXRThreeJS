@@ -114,7 +114,9 @@ void init(Size windowSize) {
   loader.load("OrpheFT_3D_rev9.dae", js.allowInterop((m) {
     print(m);
     model = m;
-    scene.add(model.scene.children[0]);
+    final obj = model.scene.children[0];
+    scene.add();
+    Mesh(obj.clone(true));
   }), js.allowInterop((progress) {
     print("${progress.loaded} / ${progress.total} ");
   }));
