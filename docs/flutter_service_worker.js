@@ -13,7 +13,7 @@ const RESOURCES = {
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "index.html": "7a8c10be2452cd2ef9d44fadf2a4a6e7",
 "/": "7a8c10be2452cd2ef9d44fadf2a4a6e7",
-"main.dart.js": "1318ed4ebf4cb88ff3935aed9a582a85",
+"main.dart.js": "277d519c72e8306ed32d5f365cf7f42f",
 "manifest.json": "66e7595a00a6dc3ed79c3535983e8c42",
 "nyanlooped.ogg": "7e6c1d5b03b3f2b5f318c4aeb6bc8394",
 "nyanslow.ogg": "f1f43d9ad677fb8ec0bf069405e467b0",

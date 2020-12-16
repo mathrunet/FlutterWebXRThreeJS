@@ -115,8 +115,7 @@ void init(Size windowSize) {
     print(m);
     model = m;
     final obj = model.scene.children[0];
-    scene.add();
-    Mesh(obj.clone(true));
+    scene.add(obj);
   }), js.allowInterop((progress) {
     print("${progress.loaded} / ${progress.total} ");
   }));
