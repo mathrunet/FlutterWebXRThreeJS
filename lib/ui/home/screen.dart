@@ -71,16 +71,16 @@ WebGLRenderer renderer;
 Scene scene;
 PerspectiveCamera camera;
 
-Object3D poptart;
-Object3D feet;
-Object3D face;
-Object3D tail;
+// Object3D poptart;
+// Object3D feet;
+// Object3D face;
+// Object3D tail;
 
 List stars;
 num numStars = 10;
 
-Object3D rainbow;
-Object3D rainChunk;
+// Object3D rainbow;
+// Object3D rainChunk;
 num numRainChunks = 30;
 
 num mouseX = 0;
@@ -120,137 +120,137 @@ void init(Size windowSize) {
     print("${progress.loaded} / ${progress.total} ");
   }));
   //POPTART
-  poptart = new Object3D();
-  //    object     x    y    z    w    h    d   color
-  helper(poptart, 0, -2, -1, 21, 14, 3, 0x222222);
-  helper(poptart, 1, -1, -1, 19, 16, 3, 0x222222);
-  helper(poptart, 2, 0, -1, 17, 18, 3, 0x222222);
+  // poptart = new Object3D();
+  // //    object     x    y    z    w    h    d   color
+  // helper(poptart, 0, -2, -1, 21, 14, 3, 0x222222);
+  // helper(poptart, 1, -1, -1, 19, 16, 3, 0x222222);
+  // helper(poptart, 2, 0, -1, 17, 18, 3, 0x222222);
 
-  helper(poptart, 1, -2, -1.5, 19, 14, 4, 0xffcc99);
-  helper(poptart, 2, -1, -1.5, 17, 16, 4, 0xffcc99);
+  // helper(poptart, 1, -2, -1.5, 19, 14, 4, 0xffcc99);
+  // helper(poptart, 2, -1, -1.5, 17, 16, 4, 0xffcc99);
 
-  helper(poptart, 2, -4, 2, 17, 10, .6, 0xff99ff);
-  helper(poptart, 3, -3, 2, 15, 12, .6, 0xff99ff);
-  helper(poptart, 4, -2, 2, 13, 14, .6, 0xff99ff);
+  // helper(poptart, 2, -4, 2, 17, 10, .6, 0xff99ff);
+  // helper(poptart, 3, -3, 2, 15, 12, .6, 0xff99ff);
+  // helper(poptart, 4, -2, 2, 13, 14, .6, 0xff99ff);
 
-  helper(poptart, 4, -4, 2, 1, 1, .7, 0xff3399);
-  helper(poptart, 9, -3, 2, 1, 1, .7, 0xff3399);
-  helper(poptart, 12, -3, 2, 1, 1, .7, 0xff3399);
-  helper(poptart, 16, -5, 2, 1, 1, .7, 0xff3399);
-  helper(poptart, 8, -7, 2, 1, 1, .7, 0xff3399);
-  helper(poptart, 5, -9, 2, 1, 1, .7, 0xff3399);
-  helper(poptart, 9, -10, 2, 1, 1, .7, 0xff3399);
-  helper(poptart, 3, -11, 2, 1, 1, .7, 0xff3399);
-  helper(poptart, 7, -13, 2, 1, 1, .7, 0xff3399);
-  helper(poptart, 4, -14, 2, 1, 1, .7, 0xff3399);
+  // helper(poptart, 4, -4, 2, 1, 1, .7, 0xff3399);
+  // helper(poptart, 9, -3, 2, 1, 1, .7, 0xff3399);
+  // helper(poptart, 12, -3, 2, 1, 1, .7, 0xff3399);
+  // helper(poptart, 16, -5, 2, 1, 1, .7, 0xff3399);
+  // helper(poptart, 8, -7, 2, 1, 1, .7, 0xff3399);
+  // helper(poptart, 5, -9, 2, 1, 1, .7, 0xff3399);
+  // helper(poptart, 9, -10, 2, 1, 1, .7, 0xff3399);
+  // helper(poptart, 3, -11, 2, 1, 1, .7, 0xff3399);
+  // helper(poptart, 7, -13, 2, 1, 1, .7, 0xff3399);
+  // helper(poptart, 4, -14, 2, 1, 1, .7, 0xff3399);
 
-  poptart.position.x = -10.5;
-  poptart.position.y = 9.0;
-  scene.add(poptart);
+  // poptart.position.x = -10.5;
+  // poptart.position.y = 9.0;
+  // scene.add(poptart);
 
-  //FEET
-  feet = new Object3D();
-  helper(feet, 0, -2, .49, 3, 3, 1, 0x222222);
-  helper(feet, 1, -1, .49, 3, 3, 1, 0x222222);
-  helper(feet, 1, -2, -.01, 2, 2, 2, 0x999999);
-  helper(feet, 2, -1, -.01, 2, 2, 2, 0x999999);
+  // //FEET
+  // feet = new Object3D();
+  // helper(feet, 0, -2, .49, 3, 3, 1, 0x222222);
+  // helper(feet, 1, -1, .49, 3, 3, 1, 0x222222);
+  // helper(feet, 1, -2, -.01, 2, 2, 2, 0x999999);
+  // helper(feet, 2, -1, -.01, 2, 2, 2, 0x999999);
 
-  helper(feet, 6, -2, -.5, 3, 3, 1, 0x222222);
-  helper(feet, 6, -2, -.5, 4, 2, 1, 0x222222);
-  helper(feet, 7, -2, -.99, 2, 2, 2, 0x999999);
+  // helper(feet, 6, -2, -.5, 3, 3, 1, 0x222222);
+  // helper(feet, 6, -2, -.5, 4, 2, 1, 0x222222);
+  // helper(feet, 7, -2, -.99, 2, 2, 2, 0x999999);
 
-  helper(feet, 16, -3, .49, 3, 2, 1, 0x222222);
-  helper(feet, 15, -2, .49, 3, 2, 1, 0x222222);
-  helper(feet, 15, -2, -.01, 2, 1, 2, 0x999999);
-  helper(feet, 16, -3, -.01, 2, 1, 2, 0x999999);
+  // helper(feet, 16, -3, .49, 3, 2, 1, 0x222222);
+  // helper(feet, 15, -2, .49, 3, 2, 1, 0x222222);
+  // helper(feet, 15, -2, -.01, 2, 1, 2, 0x999999);
+  // helper(feet, 16, -3, -.01, 2, 1, 2, 0x999999);
 
-  helper(feet, 21, -3, -.5, 3, 2, 1, 0x222222);
-  helper(feet, 20, -2, -.5, 3, 2, 1, 0x222222);
-  helper(feet, 20, -2, -.99, 2, 1, 2, 0x999999);
-  helper(feet, 21, -3, -.99, 2, 1, 2, 0x999999);
+  // helper(feet, 21, -3, -.5, 3, 2, 1, 0x222222);
+  // helper(feet, 20, -2, -.5, 3, 2, 1, 0x222222);
+  // helper(feet, 20, -2, -.99, 2, 1, 2, 0x999999);
+  // helper(feet, 21, -3, -.99, 2, 1, 2, 0x999999);
 
-  feet.position.x = -12.5;
-  feet.position.y = -6.0;
-  scene.add(feet);
+  // feet.position.x = -12.5;
+  // feet.position.y = -6.0;
+  // scene.add(feet);
 
-  //TAIL
-  tail = new Object3D();
-  helper(tail, 0, 0, -.25, 4, 3, 1.5, 0x222222);
-  helper(tail, 1, -1, -.25, 4, 3, 1.5, 0x222222);
-  helper(tail, 2, -2, -.25, 4, 3, 1.5, 0x222222);
-  helper(tail, 3, -3, -.25, 4, 3, 1.5, 0x222222);
-  helper(tail, 1, -1, -.5, 2, 1, 2, 0x999999);
-  helper(tail, 2, -2, -.5, 2, 1, 2, 0x999999);
-  helper(tail, 3, -3, -.5, 2, 1, 2, 0x999999);
-  helper(tail, 4, -4, -.5, 2, 1, 2, 0x999999);
+  // //TAIL
+  // tail = new Object3D();
+  // helper(tail, 0, 0, -.25, 4, 3, 1.5, 0x222222);
+  // helper(tail, 1, -1, -.25, 4, 3, 1.5, 0x222222);
+  // helper(tail, 2, -2, -.25, 4, 3, 1.5, 0x222222);
+  // helper(tail, 3, -3, -.25, 4, 3, 1.5, 0x222222);
+  // helper(tail, 1, -1, -.5, 2, 1, 2, 0x999999);
+  // helper(tail, 2, -2, -.5, 2, 1, 2, 0x999999);
+  // helper(tail, 3, -3, -.5, 2, 1, 2, 0x999999);
+  // helper(tail, 4, -4, -.5, 2, 1, 2, 0x999999);
 
-  tail.position.x = -16.5;
-  tail.position.y = 2.0;
-  scene.add(tail);
+  // tail.position.x = -16.5;
+  // tail.position.y = 2.0;
+  // scene.add(tail);
 
-  //FACE
-  face = new Object3D();
-  helper(face, 2, -3, -3, 12, 9, 4, 0x222222);
-  helper(face, 0, -5, 0, 16, 5, 1, 0x222222);
-  helper(face, 1, -1, 0, 4, 10, 1, 0x222222);
-  helper(face, 11, -1, 0, 4, 10, 1, 0x222222);
-  helper(face, 3, -11, 0, 10, 2, 1, 0x222222);
-  helper(face, 2, 0, 0, 2, 2, 1, 0x222222);
-  helper(face, 4, -2, 0, 2, 2, 1, 0x222222);
-  helper(face, 12, 0, 0, 2, 2, 1, 0x222222);
-  helper(face, 10, -2, 0, 2, 2, 1, 0x222222);
+  // //FACE
+  // face = new Object3D();
+  // helper(face, 2, -3, -3, 12, 9, 4, 0x222222);
+  // helper(face, 0, -5, 0, 16, 5, 1, 0x222222);
+  // helper(face, 1, -1, 0, 4, 10, 1, 0x222222);
+  // helper(face, 11, -1, 0, 4, 10, 1, 0x222222);
+  // helper(face, 3, -11, 0, 10, 2, 1, 0x222222);
+  // helper(face, 2, 0, 0, 2, 2, 1, 0x222222);
+  // helper(face, 4, -2, 0, 2, 2, 1, 0x222222);
+  // helper(face, 12, 0, 0, 2, 2, 1, 0x222222);
+  // helper(face, 10, -2, 0, 2, 2, 1, 0x222222);
 
-  helper(face, 1, -5, .5, 14, 5, 1, 0x999999);
-  helper(face, 3, -4, .5, 10, 8, 1, 0x999999);
-  helper(face, 2, -1, .5, 2, 10, 1, 0x999999);
-  helper(face, 12, -1, .5, 2, 10, 1, 0x999999);
-  helper(face, 4, -2, .5, 1, 2, 1, 0x999999);
-  helper(face, 5, -3, .5, 1, 1, 1, 0x999999);
-  helper(face, 11, -2, .5, 1, 2, 1, 0x999999);
-  helper(face, 10, -3, .5, 1, 1, 1, 0x999999);
-  //Eyes
-  helper(face, 4, -6, .6, 2, 2, 1, 0x222222);
-  helper(face, 11, -6, .6, 2, 2, 1, 0x222222);
-  helper(face, 3.99, -5.99, .6, 1.01, 1.01, 1.01, 0xffffff);
-  helper(face, 10.99, -5.99, .6, 1.01, 1.01, 1.01, 0xffffff);
-  //MOUTH
-  helper(face, 5, -10, .6, 7, 1, 1, 0x222222);
-  helper(face, 5, -9, .6, 1, 2, 1, 0x222222);
-  helper(face, 8, -9, .6, 1, 2, 1, 0x222222);
-  helper(face, 11, -9, .6, 1, 2, 1, 0x222222);
-  //CHEEKS
-  helper(face, 2, -8, .6, 2, 2, .91, 0xff9999);
-  helper(face, 13, -8, .6, 2, 2, .91, 0xff9999);
+  // helper(face, 1, -5, .5, 14, 5, 1, 0x999999);
+  // helper(face, 3, -4, .5, 10, 8, 1, 0x999999);
+  // helper(face, 2, -1, .5, 2, 10, 1, 0x999999);
+  // helper(face, 12, -1, .5, 2, 10, 1, 0x999999);
+  // helper(face, 4, -2, .5, 1, 2, 1, 0x999999);
+  // helper(face, 5, -3, .5, 1, 1, 1, 0x999999);
+  // helper(face, 11, -2, .5, 1, 2, 1, 0x999999);
+  // helper(face, 10, -3, .5, 1, 1, 1, 0x999999);
+  // //Eyes
+  // helper(face, 4, -6, .6, 2, 2, 1, 0x222222);
+  // helper(face, 11, -6, .6, 2, 2, 1, 0x222222);
+  // helper(face, 3.99, -5.99, .6, 1.01, 1.01, 1.01, 0xffffff);
+  // helper(face, 10.99, -5.99, .6, 1.01, 1.01, 1.01, 0xffffff);
+  // //MOUTH
+  // helper(face, 5, -10, .6, 7, 1, 1, 0x222222);
+  // helper(face, 5, -9, .6, 1, 2, 1, 0x222222);
+  // helper(face, 8, -9, .6, 1, 2, 1, 0x222222);
+  // helper(face, 11, -9, .6, 1, 2, 1, 0x222222);
+  // //CHEEKS
+  // helper(face, 2, -8, .6, 2, 2, .91, 0xff9999);
+  // helper(face, 13, -8, .6, 2, 2, .91, 0xff9999);
 
-  face.position.x = -.5;
-  face.position.y = 4.0;
-  face.position.z = 4.0;
-  scene.add(face);
+  // face.position.x = -.5;
+  // face.position.y = 4.0;
+  // face.position.z = 4.0;
+  // scene.add(face);
 
-  //RAINBOW
-  rainbow = new Object3D();
-  for (var c = 0; c < numRainChunks - 1; c++) {
-    var yOffset = 8;
-    if (c % 2 == 1) yOffset = 7;
-    var xOffset = (-c * 8) - 16.5;
-    helper(rainbow, xOffset, yOffset, 0, 8, 3, 1, 0xff0000);
-    helper(rainbow, xOffset, yOffset - 3, 0, 8, 3, 1, 0xff9900);
-    helper(rainbow, xOffset, yOffset - 6, 0, 8, 3, 1, 0xffff00);
-    helper(rainbow, xOffset, yOffset - 9, 0, 8, 3, 1, 0x33ff00);
-    helper(rainbow, xOffset, yOffset - 12, 0, 8, 3, 1, 0x0099ff);
-    helper(rainbow, xOffset, yOffset - 15, 0, 8, 3, 1, 0x6633ff);
-  }
-  scene.add(rainbow);
+  // //RAINBOW
+  // rainbow = new Object3D();
+  // for (var c = 0; c < numRainChunks - 1; c++) {
+  //   var yOffset = 8;
+  //   if (c % 2 == 1) yOffset = 7;
+  //   var xOffset = (-c * 8) - 16.5;
+  //   helper(rainbow, xOffset, yOffset, 0, 8, 3, 1, 0xff0000);
+  //   helper(rainbow, xOffset, yOffset - 3, 0, 8, 3, 1, 0xff9900);
+  //   helper(rainbow, xOffset, yOffset - 6, 0, 8, 3, 1, 0xffff00);
+  //   helper(rainbow, xOffset, yOffset - 9, 0, 8, 3, 1, 0x33ff00);
+  //   helper(rainbow, xOffset, yOffset - 12, 0, 8, 3, 1, 0x0099ff);
+  //   helper(rainbow, xOffset, yOffset - 15, 0, 8, 3, 1, 0x6633ff);
+  // }
+  // scene.add(rainbow);
 
-  rainChunk = new Object3D();
-  helper(rainChunk, -16.5, 7, 0, 8, 3, 1, 0xff0000);
-  helper(rainChunk, -16.5, 4, 0, 8, 3, 1, 0xff9900);
-  helper(rainChunk, -16.5, 1, 0, 8, 3, 1, 0xffff00);
-  helper(rainChunk, -16.5, -2, 0, 8, 3, 1, 0x33ff00);
-  helper(rainChunk, -16.5, -5, 0, 8, 3, 1, 0x0099ff);
-  helper(rainChunk, -16.5, -8, 0, 8, 3, 1, 0x6633ff);
-  rainChunk.position.x -= (8 * (numRainChunks - 1));
-  scene.add(rainChunk);
+  // rainChunk = new Object3D();
+  // helper(rainChunk, -16.5, 7, 0, 8, 3, 1, 0xff0000);
+  // helper(rainChunk, -16.5, 4, 0, 8, 3, 1, 0xff9900);
+  // helper(rainChunk, -16.5, 1, 0, 8, 3, 1, 0xffff00);
+  // helper(rainChunk, -16.5, -2, 0, 8, 3, 1, 0x33ff00);
+  // helper(rainChunk, -16.5, -5, 0, 8, 3, 1, 0x0099ff);
+  // helper(rainChunk, -16.5, -8, 0, 8, 3, 1, 0x6633ff);
+  // rainChunk.position.x -= (8 * (numRainChunks - 1));
+  // scene.add(rainChunk);
 
   stars = new List();
   for (var state = 0; state < 6; state++) {
