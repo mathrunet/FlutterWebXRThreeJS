@@ -69,7 +69,7 @@ Math.Random rand = Math.Random();
 DivElement container;
 WebGLRenderer renderer;
 Scene scene;
-PerspectiveCamera camera;
+OrthographicCamera camera;
 
 // Object3D poptart;
 // Object3D feet;
@@ -101,8 +101,11 @@ void init(Size windowSize) {
   container = new DivElement();
   document.body.children.add(container);
 
-  camera = new PerspectiveCamera(
-      45.0, window.innerWidth / window.innerHeight, 0.1, 10000.0);
+  camera = OrthographicCamera(
+    -80, 80, 60, -60, 1, 1000
+  );
+  // camera = new PerspectiveCamera(
+  //     45.0, window.innerWidth / window.innerHeight, 0.1, 10000.0);
   camera.position.z = 30.0;
   camera.position.x = 0.0;
   camera.position.y = 0.0;

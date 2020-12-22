@@ -9493,7 +9493,7 @@ lD:function lD(){},
 abD:function(a){var s,r,q,p,o=16777215,n=document,m=n.createElement("div")
 $.a2U=m
 n.body.appendChild(m)
-m=new THREE.PerspectiveCamera(45,window.innerWidth/window.innerHeight,0.1,1e4)
+m=new THREE.OrthographicCamera(-80,80,60,-60,1,1000)
 $.d_=m
 J.Dg(J.d0(m),30)
 J.XF(J.d0($.d_),0)
