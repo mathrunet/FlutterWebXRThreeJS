@@ -3,12 +3,12 @@ description: An example of how to use Flutter in WebXR with ThreeJS
 version: 1.0.0+1
 publish_to: none
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  js: ^0.6.1+1
+  js: ^0.6.3
   cupertino_icons: ^0.1.2
   threejs_facade:
     path: ../threejs-dart-facade

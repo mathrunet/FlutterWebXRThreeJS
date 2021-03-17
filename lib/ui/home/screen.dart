@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
     // song2 = _addAudio("nyanslow.ogg", false);
     document.onMouseMove.listen(onDocumentMouseMove);
     document.onMouseDown.listen(onDocumentMouseDown);
-    WidgetsBinding.instance.addPostFrameCallback((_) {
+    WidgetsBinding.instance?.addPostFrameCallback((_) {
       final _size = MediaQuery.of(context).size;
       init(_size);
       animate(0);
@@ -66,17 +66,17 @@ void pauseAudio(String path, [bool second = false]) {
 
 Math.Random rand = Math.Random();
 
-DivElement container;
-WebGLRenderer renderer;
-Scene scene;
-OrthographicCamera camera;
+DivElement? container;
+WebGLRenderer? renderer;
+Scene? scene;
+OrthographicCamera? camera;
 
 // Object3D poptart;
 // Object3D feet;
 // Object3D face;
 // Object3D tail;
 
-List stars;
+List? stars;
 num numStars = 10;
 
 // Object3D rainbow;
@@ -85,40 +85,38 @@ num numRainChunks = 30;
 
 num mouseX = 0;
 num mouseY = 0;
-num windowHalfX = window.innerWidth / 2;
-num windowHalfY = window.innerHeight / 2;
+num windowHalfX = window.innerWidth ?? 0 / 2;
+num windowHalfY = window.innerHeight ?? 0 / 2;
 
 num deltaSum = 0;
 num tick = 0;
 num frame = 0;
 bool running = true;
 
-AudioElement song;
-AudioElement song2;
-ColladaModel model;
+AudioElement? song;
+AudioElement? song2;
+ColladaModel? model;
 
 void init(Size windowSize) {
   container = new DivElement();
-  document.body.children.add(container);
+  document.body?.children.add(container!);
 
-  camera = OrthographicCamera(
-    -80, 80, 60, -60, 1, 1000
-  );
+  camera = OrthographicCamera(-80, 80, 60, -60, 1, 1000);
   // camera = new PerspectiveCamera(
   //     45.0, window.innerWidth / window.innerHeight, 0.1, 10000.0);
-  camera.position.z = 30.0;
-  camera.position.x = 0.0;
-  camera.position.y = 0.0;
+  camera!.position.z = 30.0;
+  camera!.position.x = 0.0;
+  camera!.position.y = 0.0;
 
   scene = new Scene();
   // TODO: FogExp2 does not inherit correctly.
-  scene.fog = new FogExp2(0x003366, 0.0095);
+  scene!.fog = new FogExp2(0x003366, 0.0095);
   final loader = ColladaLoader();
   loader.load("OrpheFT_3D_rev9.dae", js.allowInterop((m) {
     print(m);
     model = m;
-    final obj = model.scene.children[0];
-    scene.add(obj);
+    final obj = model?.scene.children[0];
+    if(obj != null) scene!.add(obj);
   }), js.allowInterop((progress) {
     print("${progress.loaded} / ${progress.total} ");
   }));
@@ -255,32 +253,32 @@ void init(Size windowSize) {
   // rainChunk.position.x -= (8 * (numRainChunks - 1));
   // scene.add(rainChunk);
 
-  stars = new List();
+  stars = [];
   for (var state = 0; state < 6; state++) {
-    stars.add(new List());
+    stars!.add([]);
     for (var c = 0; c < numStars; c++) {
       var star = new Object3D();
       star.position.x = rand.nextDouble() * 200 - 100;
       star.position.y = rand.nextDouble() * 200 - 100;
       star.position.z = rand.nextDouble() * 200 - 100;
       buildStar(star, state);
-      scene.add(star);
-      stars[state].add(star);
+      scene!.add(star);
+      stars![state].add(star);
     }
   }
 
   var pointLight = new PointLight(0xFFFFFF);
   pointLight.position.z = 1000.0;
-  scene.add(pointLight);
+  scene!.add(pointLight);
 
   renderer = new WebGLRenderer();
   _updateSize(windowSize);
-  container.nodes.add(renderer.domElement);
+  container!.nodes.add(renderer!.domElement);
 }
 
 void _updateSize(ui.Size windowSize) {
   if (renderer != null) {
-    renderer.setSize(windowSize.width, windowSize.height, true);
+    renderer!.setSize(windowSize.width, windowSize.height, true);
   }
 }
 
@@ -379,10 +377,10 @@ void render(num t) {
   //       break;
   //   }
   // }
-  camera.position.x += (mouseX - camera.position.x) * .005;
-  camera.position.y += (-mouseY - camera.position.y) * .005;
-  camera.lookAt(scene.position);
-  renderer.render(scene, camera, null, false);
+  camera!.position.x += (mouseX - camera!.position.x) * .005;
+  camera!.position.y += (-mouseY - camera!.position.y) * .005;
+  camera!.lookAt(scene!.position);
+  renderer!.render(scene!, camera!, null, false);
 }
 
 void helper(o, x, y, z, w, h, d, c) {
